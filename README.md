@@ -49,9 +49,11 @@ git clone https://github.com/vedant08mehta/moodify.git
 cd moodify
 
 2️⃣ Install Dependencies
+```bash
 pip install -r requirements.txt
 
 3️⃣ Run the App
+```bash
 streamlit run app.py
 
 Your default browser will open at:
@@ -63,6 +65,7 @@ Your default browser will open at:
 
 All dependencies are version-locked for stability:
 
+```bash
 streamlit==1.22.0
 tensorflow==2.19.1
 keras==2.19.0
