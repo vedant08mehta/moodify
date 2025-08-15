@@ -37,6 +37,7 @@ moodify/
 ├── app.py             # Main Streamlit app
 ├── requirements.txt   # All dependencies with exact versions
 ├── README.md          # This file 
+```
 --- 
 
 ## 🚀 How to Run Locally
