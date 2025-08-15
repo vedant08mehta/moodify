@@ -3,12 +3,6 @@ from deepface import DeepFace
 from PIL import Image
 import tempfile
 
-@st.cache_resource
-def load_model():
-    return "loaded"
-
-model = load_model()
-
 songs_by_mood = {
     "happy": [
         ("Happy – Pharrell Williams", "https://www.youtube.com/watch?v=y6Sxv-sUYtM"),
@@ -66,13 +60,13 @@ st.write("Upload a photo of yourself and let AI guess your mood!")
 uploaded_file = st.file_uploader("Choose a photo", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
-    with tempfile.NamedTemporaryFile(delete=False) as temp_file:
-        temp_file.write(uploaded_file.getbuffer())
-        image_path = temp_file.name
+    img = Image.open(uploaded_file)
+    img = img.convert("RGB")
+    img = img.resize((400, 400))
 
-    img = Image.open(image_path)
-    img.thumbnail((500, 500))
-    img.save(image_path)
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as temp_file:
+        img.save(temp_file.name)
+        image_path = temp_file.name
 
     st.image(img, caption="Uploaded Image", use_column_width=True)
 
@@ -95,16 +89,11 @@ if uploaded_file is not None:
             "disgust": "#388E3C"
         }
 
-        if mood.lower() in mood_colors:
-            color = mood_colors[mood.lower()]
-            st.markdown(
-                f"""
-                <div style='padding:10px; background-color:{color}; border-radius:5px;'>
-                    <h3 style='color:white;'>Detected mood: {mood}</h3>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
+        color = mood_colors.get(mood.lower(), "#000000")
+        st.markdown(
+            f"<div style='padding:10px; background-color:{color}; border-radius:5px;'><h3 style='color:white;'>Detected mood: {mood}</h3></div>",
+            unsafe_allow_html=True
+        )
 
     except Exception:
         mood = "unknown"
