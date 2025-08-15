@@ -37,24 +37,24 @@ moodify/
 │
 ├── app.py             # Main Streamlit app
 ├── requirements.txt   # All dependencies with exact versions
-├── README.md          # This file
+├── README.md          # This file ```
 
----
+--- 
 
 ## 🚀 How to Run Locally
 
 1️⃣ Clone the Repository  
 ```bash
 git clone https://github.com/vedant08mehta/moodify.git
-cd moodify
+cd moodify ```
 
 2️⃣ Install Dependencies
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt ```
 
 3️⃣ Run the App
 ```bash
-streamlit run app.py
+streamlit run app.py ```
 
 Your default browser will open at:
 ➡️ http://localhost:8501
@@ -72,7 +72,7 @@ keras==2.19.0
 deepface==0.0.87
 numpy==1.26.4
 protobuf==3.20.3
-Pillow==10.1.0
+Pillow==10.1.0 ```
 
 ---
 
