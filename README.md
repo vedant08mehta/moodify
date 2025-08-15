@@ -62,13 +62,13 @@ Your default browser will open at:
 
 All dependencies are version-locked for stability:
 
-```bash streamlit==1.22.0 
-tensorflow==2.19.1 
-keras==2.19.0
-deepface==0.0.87 
+```bash streamlit==1.22.0
+tensorflow==2.10.0
+keras==2.10.0
+deepface==0.0.95
 numpy==1.26.4
-protobuf==3.20.3 
-Pillow==10.1.0 
+protobuf==3.19.6
+Pillow==11.3.0 
 ```
 
 ---
