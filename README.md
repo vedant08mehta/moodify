@@ -32,7 +32,7 @@ Moodify is an AI-powered web app that detects your **facial emotion** in real ti
 
 ## 📂 Project Structure
 ```bash
-moodify
+moodify/
 │
 ├── app.py             # Main Streamlit app
 ├── requirements.txt   # All dependencies with exact versions
