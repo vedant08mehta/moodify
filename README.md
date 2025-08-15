@@ -44,6 +44,7 @@ moodify/
 ## 🚀 How to Run Locally
 
 1️⃣ Clone the Repository  
+```bash
 git clone https://github.com/vedant08mehta/moodify.git
 cd moodify
 
@@ -52,7 +53,7 @@ pip install -r requirements.txt
 
 3️⃣ Run the App
 streamlit run app.py
-'''bash
+
 Your default browser will open at:
 ➡️ http://localhost:8501
 
