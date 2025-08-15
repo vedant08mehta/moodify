@@ -32,29 +32,25 @@ Moodify is an AI-powered web app that detects your **facial emotion** in real ti
 
 ## 📂 Project Structure
 
-```bash
-moodify/
+moodify
 │
 ├── app.py             # Main Streamlit app
 ├── requirements.txt   # All dependencies with exact versions
-├── README.md          # This file ```
-
+├── README.md          # This file 
 --- 
 
 ## 🚀 How to Run Locally
 
 1️⃣ Clone the Repository  
-```bash
-git clone https://github.com/vedant08mehta/moodify.git
-cd moodify ```
+
+```bash git clone https://github.com/vedant08mehta/moodify.git ```
+```bash cd moodify ```
 
 2️⃣ Install Dependencies
-```bash
-pip install -r requirements.txt ```
+```bash pip install -r requirements.txt ```
 
 3️⃣ Run the App
-```bash
-streamlit run app.py ```
+```bash streamlit run app.py ```
 
 Your default browser will open at:
 ➡️ http://localhost:8501
@@ -65,14 +61,13 @@ Your default browser will open at:
 
 All dependencies are version-locked for stability:
 
-```bash
-streamlit==1.22.0
-tensorflow==2.19.1
-keras==2.19.0
-deepface==0.0.87
-numpy==1.26.4
-protobuf==3.20.3
-Pillow==10.1.0 ```
+```bash streamlit==1.22.0 ```
+```bash tensorflow==2.19.1 ```
+```bash keras==2.19.0 ```
+```bash deepface==0.0.87 ```
+```bash numpy==1.26.4 ```
+```bash protobuf==3.20.3 ```
+```bash Pillow==10.1.0 ```
 
 ---
 
