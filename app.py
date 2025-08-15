@@ -3,6 +3,12 @@ from deepface import DeepFace
 from PIL import Image
 import tempfile
 
+@st.cache_resource
+def load_model():
+    return "loaded"
+
+model = load_model()
+
 songs_by_mood = {
     "happy": [
         ("Happy – Pharrell Williams", "https://www.youtube.com/watch?v=y6Sxv-sUYtM"),
@@ -64,7 +70,11 @@ if uploaded_file is not None:
         temp_file.write(uploaded_file.getbuffer())
         image_path = temp_file.name
 
-    st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
+    img = Image.open(image_path)
+    img.thumbnail((500, 500))
+    img.save(image_path)
+
+    st.image(img, caption="Uploaded Image", use_column_width=True)
 
     try:
         result = DeepFace.analyze(
