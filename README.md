@@ -68,7 +68,8 @@ keras==2.19.0
 deepface==0.0.87 
 numpy==1.26.4
 protobuf==3.20.3 
-Pillow==10.1.0 ```
+Pillow==10.1.0 
+```
 
 ---
 
