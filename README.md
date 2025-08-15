@@ -73,7 +73,7 @@ Pillow==10.1.0
 
 ---
 
-💡 Future Enhancements
+## 💡 Future Enhancements
 
 🎶 Integration with Spotify/YouTube APIs for live playlist streaming.
 
