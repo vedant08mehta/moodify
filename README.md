@@ -31,7 +31,7 @@ Moodify is an AI-powered web app that detects your **facial emotion** in real ti
 ---
 
 ## 📂 Project Structure
-
+```bash
 moodify
 │
 ├── app.py             # Main Streamlit app
@@ -61,13 +61,13 @@ Your default browser will open at:
 
 All dependencies are version-locked for stability:
 
-```bash streamlit==1.22.0 ```
-```bash tensorflow==2.19.1 ```
-```bash keras==2.19.0 ```
-```bash deepface==0.0.87 ```
-```bash numpy==1.26.4 ```
-```bash protobuf==3.20.3 ```
-```bash Pillow==10.1.0 ```
+```bash streamlit==1.22.0 
+tensorflow==2.19.1 
+keras==2.19.0
+deepface==0.0.87 
+numpy==1.26.4
+protobuf==3.20.3 
+Pillow==10.1.0 ```
 
 ---
 
