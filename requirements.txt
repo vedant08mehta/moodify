@@ -1,7 +1,7 @@
 streamlit==1.22.0
-tensorflow==2.10.0
+tensorflow-cpu==2.10.0
 keras==2.10.0
 deepface==0.0.95
-numpy==1.26.4
+numpy==1.23.5
 protobuf==3.19.6
-Pillow==11.3.0
+Pillow==9.5.0
