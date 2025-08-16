@@ -44,14 +44,14 @@ moodify/
 
 1️⃣ Clone the Repository  
 
-```bash git clone https://github.com/vedant08mehta/moodify.git ```
-```bash cd moodify ```
+ ```git clone https://github.com/vedant08mehta/moodify.git ```
+```cd moodify ```
 
 2️⃣ Install Dependencies
-```bash pip install -r requirements.txt ```
+```pip install -r requirements.txt ```
 
 3️⃣ Run the App
-```bash streamlit run app.py ```
+```streamlit run app.py ```
 
 Your default browser will open at:
 ➡️ http://localhost:8501
