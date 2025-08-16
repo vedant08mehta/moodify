@@ -60,19 +60,20 @@ st.write("Upload a photo of yourself and let AI guess your mood!")
 uploaded_file = st.file_uploader("Choose a photo", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
-    img = Image.open(uploaded_file)
-    img = img.convert("RGB")
-    img = img.resize((400, 400))
+    with tempfile.NamedTemporaryFile(delete=False) as temp_file:
+        temp_file.write(uploaded_file.getbuffer())
+        temp_file_path = temp_file.name
 
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as temp_file:
-        img.save(temp_file.name)
-        image_path = temp_file.name
+    image = Image.open(temp_file_path)
+    image = image.resize((400, 400))
+    resized_path = temp_file_path + "_resized.png"
+    image.save(resized_path)
 
-    st.image(img, caption="Uploaded Image", use_column_width=True)
+    st.image(image, caption="Uploaded Image", use_column_width=True)
 
     try:
         result = DeepFace.analyze(
-            img_path=image_path,
+            img_path=resized_path,
             actions=['emotion'],
             enforce_detection=False,
             detector_backend='opencv'
@@ -89,11 +90,16 @@ if uploaded_file is not None:
             "disgust": "#388E3C"
         }
 
-        color = mood_colors.get(mood.lower(), "#000000")
-        st.markdown(
-            f"<div style='padding:10px; background-color:{color}; border-radius:5px;'><h3 style='color:white;'>Detected mood: {mood}</h3></div>",
-            unsafe_allow_html=True
-        )
+        if mood.lower() in mood_colors:
+            color = mood_colors[mood.lower()]
+            st.markdown(
+                f"""
+                <div style='padding:10px; background-color:{color}; border-radius:5px;'>
+                    <h3 style='color:white;'>Detected mood: {mood}</h3>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
 
     except Exception:
         mood = "unknown"
