@@ -62,18 +62,13 @@ uploaded_file = st.file_uploader("Choose a photo", type=["jpg", "jpeg", "png"])
 if uploaded_file is not None:
     with tempfile.NamedTemporaryFile(delete=False) as temp_file:
         temp_file.write(uploaded_file.getbuffer())
-        temp_file_path = temp_file.name
+        image_path = temp_file.name
 
-    image = Image.open(temp_file_path)
-    image = image.resize((400, 400))
-    resized_path = temp_file_path + "_resized.png"
-    image.save(resized_path)
-
-    st.image(image, caption="Uploaded Image", use_column_width=True)
+    st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
 
     try:
         result = DeepFace.analyze(
-            img_path=resized_path,
+            img_path=image_path,
             actions=['emotion'],
             enforce_detection=False,
             detector_backend='opencv'
